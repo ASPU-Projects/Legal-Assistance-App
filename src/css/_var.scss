@@ -1,0 +1,257 @@
+// :root {
+//   --clr-primary-light: #473b33;
+//   --clr-silver: #a8a5a6;
+//   --clr-silver-v1: #bdbabb;
+//   --clr-scarlet: #fe1e00;
+//   --clr-scarlet-v1: rgb(254, 30, 0, 0.79);
+//   --clr-green: #00fe93;
+//   --clr-yellow: #fec80a;
+//   --clr-jet: #302924;
+//   --clr-peach: #ffc397;
+//   --font-family-bai: "Bai Jamjuree", sans-serif;
+// }
+@media (prefers-color-scheme: light) {
+  :root {
+    /* nav and box */
+    --clr-primary: #fff;
+    /* body */
+    --clr-secondary: #f4f4f4;
+    /* color main */
+    // --clr-product: #3C5861;
+    --clr-product: #1d4c6a;
+    --text-color: #111;
+    --top: 50%;
+    --left: 50%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* nav and box */
+    --clr-primary: #29221d;
+    /* body */
+    --clr-secondary: #1e1611;
+    /* color main */
+    --clr-product: #1d4c6a;
+    // --clr-product: #3C5861;
+    --text-color: #fff;
+    --top: 50%;
+    --left: 50%;
+  }
+}
+::selection {
+  background-color: var(--clr-product);
+  color: #fff;
+}
+::-webkit-scrollbar {
+  background-color: var(--clr-primary);
+  // width:20px
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-product);
+  border-radius: 10px;
+}
+// background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+
+// background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+//  media queries
+$max-mobile: "max-width:767px";
+$min-mobile: "min-width:768px";
+$very-sm: "max-width:500px";
+
+$max-med: "max-width:991px";
+$min-med: "min-width:992px";
+$max-lg: "max-width:1199px";
+$min-lg: "min-width:1200px";
+//
+@mixin media($point) {
+  @if $point== "mobile" {
+    @media ($max-mobile) {
+      @content;
+    }
+  } @else if $point== "tablet" {
+    @media ($max-med) {
+      @content;
+    }
+  } @else if $point== "display" {
+    @media ($max-lg) {
+      @content;
+    }
+  } @else if $point == "bigDisplay" {
+    @media ($min-lg) {
+      @content;
+    }
+  } @else if $point == "smallMobile" {
+    @media ($very-sm) {
+      @content;
+    }
+  }
+}
+//  media queries
+@mixin gradient($deg) {
+  background-image: linear-gradient(
+    $deg,
+    var(--main-color),
+    var(--second-color)
+  );
+}
+// fill color
+%fillColor {
+  background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// fill color
+// gradient text
+@mixin textgdarient {
+  @include gradient(45deg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+// @mixin gradient2($deg) {
+//   background-image: linear-gradient($deg, $grad2-clr-left, $grad2-clr-right);
+// }
+// light and dark mode
+$them: "dark";
+%lightORdark {
+  @if $them== "light" {
+    background-color: white;
+    color: black;
+  } @else {
+    background-color: black;
+    color: white;
+  }
+}
+// light and dark mode
+// list style
+@mixin list-reset {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+// list style
+// circle
+@mixin circle($value) {
+  width: $value;
+  height: $value;
+  border-radius: 50%;
+}
+// circle
+// centering by flex
+%flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// centering by flex
+// overlay
+
+@mixin overlay($color, $opacity) {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color, $opacity);
+}
+// overlay
+// grid
+@mixin gridcol($min, $gap) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+  gap: $gap;
+}
+// grid
+// animation
+@mixin keyF($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+}
+// animation
+
+// hover card
+@mixin cardhover($elementName, $rotateDeg, $rotateWay) {
+  .#{$elementName} {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    .card1,
+    .card2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      text-transform: capitalize;
+      color: white;
+    }
+    .card2 {
+      backface-visibility: hidden;
+      @if $rotateWay == "y" {
+        transform: rotateY($rotateDeg);
+      } @else {
+        transform: rotateX($rotateDeg);
+      }
+    }
+    &:hover {
+      @if $rotateWay == "y" {
+        transform: rotateY(-$rotateDeg);
+      } @else {
+        transform: rotateX(-$rotateDeg);
+      }
+    }
+  }
+}
+// zic
+// shadow
+@mixin shadow {
+  box-shadow:
+    0px 12px 20px 0px rgba(black, 0.13),
+    0px 2px 4px 0px rgba(black, 0.12);
+}
+// shadow
+@mixin ziczack($className, $height) {
+  .#{$className} {
+    position: relative;
+    z-index: 100;
+    position: absolute;
+    z-index: 100;
+    height: 40px;
+    background-size: 40px 40px;
+    width: 100%;
+    background-image: linear-gradient(
+        135deg,
+        var(--light-bg) 25%,
+        transparent 25%
+      ),
+      linear-gradient(225deg, var(--light-bg) 25%, transparent 25%);
+  }
+}
+
+// zic
+// hover card
+// container
+.mainColorText {
+  color: var(--clr-product);
+}
+.mainColorBg {
+  background-color: var(--clr-product) !important;
+}
+.bg-boxes {
+  background-color: var(--clr-primary) !important;
+  color: var(--text-color) !important;
+  > * {
+    color: var(--text-color);
+  }
+}
