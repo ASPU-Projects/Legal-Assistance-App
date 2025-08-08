@@ -72,7 +72,7 @@ export default function IssuesPage() {
         <Box marginTop={4}>
           <Grid container spacing={4}>
             {Array.from({ length: 6 }).map((_, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
+              <Grid component={'div'} key={index}>
                 <Card
                   sx={{
                     height: "100%",
@@ -96,7 +96,7 @@ export default function IssuesPage() {
         <Grid container spacing={4}>
           {issues.length ? (
             issues.map((issue) => (
-              <Grid item xs={12} sm={6} md={4} key={issue?.id}>
+              <Grid component={'div'} key={issue?.id}>
                 <Card
                   sx={{
                     height: "100%",

@@ -91,7 +91,7 @@ export default function AgenciesPage() {
           <Grid container spacing={4}>
             {[...agencies]
               .map((agency) => (
-                <Grid item xs={12} sm={6} md={4} key={agency.id}>
+                <Grid component={'div'} key={agency.id}>
                   <Card
                     sx={{
                       height: "100%",
@@ -176,7 +176,7 @@ export default function AgenciesPage() {
             <Box marginTop={4}>
               <Grid container spacing={4}>
                 {Array.from({ length: 6 }).map((_, index) => (
-                  <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Grid component={'div'} key={index}>
                     <Card
                       sx={{
                         height: "100%",
@@ -220,7 +220,7 @@ export default function AgenciesPage() {
             <Box sx={{ padding: 4 }}>
               <Grid container spacing={4}>
                 {Array.from({ length: 6 }).map((_, index) => (
-                  <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Grid component={'div'} key={index}>
                     <Card
                       sx={{
                         height: "100%",

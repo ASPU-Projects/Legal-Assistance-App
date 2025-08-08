@@ -66,7 +66,7 @@ export default function CourtsPage() {
       {loading && page === 1 ? (
         <Grid container spacing={4}>
           {Array.from({ length: 6 }).map((_, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid component={'div'} key={index}>
               <Card
                 sx={{
                   height: "100%",
@@ -89,7 +89,7 @@ export default function CourtsPage() {
         <Grid container spacing={4}>
           {courts.length ? (
             courts.map((court) => (
-              <Grid item xs={12} sm={6} md={4} key={court.id}>
+              <Grid component={'div'} key={court.id}>
                 <Card
                   sx={{
                     height: "100%",

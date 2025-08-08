@@ -105,7 +105,7 @@ export default function LawyersPage() {
             {[...lawyers]
               .sort((a, b) => b.rank - a.rank)
               .map((lawyer) => (
-                <Grid item xs={12} sm={6} md={4} key={lawyer.id}>
+                <Grid component={'div'} key={lawyer.id}>
                   <Card
                     sx={{
                       height: "100%",
@@ -201,7 +201,7 @@ export default function LawyersPage() {
             <Box marginTop={4}>
               <Grid container spacing={4}>
                 {Array.from({ length: 6 }).map((_, index) => (
-                  <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Grid component={'div'} key={index}>
                     <Card
                       sx={{
                         height: "100%",
@@ -245,7 +245,7 @@ export default function LawyersPage() {
             <Box sx={{ padding: 4 }}>
               <Grid container spacing={4}>
                 {Array.from({ length: 6 }).map((_, index) => (
-                  <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Grid component={'div'} key={index}>
                     <Card
                       sx={{
                         height: "100%",

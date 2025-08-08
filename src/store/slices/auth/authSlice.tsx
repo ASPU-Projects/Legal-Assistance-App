@@ -17,6 +17,7 @@ const authReducer = createSlice({
       state.role = "admin";
       localStorage.removeItem("access_token");
       localStorage.removeItem("authenticate");
+      localStorage.removeItem("role");
     },
     logIn: (state) => {
       state.authenticate = true;

@@ -160,7 +160,7 @@ export default function LogupPage() {
           {t("CreateAccount")}
         </motion.h1>
         <Grid container spacing={2} className="inputGroup">
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               label={t("UserName")}
               variant="outlined"
@@ -177,7 +177,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               label={t("Email")}
               variant="outlined"
@@ -194,7 +194,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               label={t("Password")}
               variant="outlined"
@@ -220,7 +220,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               label={t("ConfirmPassword")}
               variant="outlined"
@@ -252,7 +252,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               label={t("Address")}
               variant="outlined"
@@ -269,7 +269,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               label={t("NationalNumber")}
               variant="outlined"
@@ -286,7 +286,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               label={t("BirthPlace")}
               variant="outlined"
@@ -303,7 +303,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               label={t("Birthday")}
               type="date"
@@ -321,7 +321,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               select
               label={t("Gender")}
@@ -341,7 +341,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <TextField
               label={t("Phone")}
               variant="outlined"
@@ -358,7 +358,7 @@ export default function LogupPage() {
               </Typography>
             )}
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid component={'div'}>
             <label htmlFor="image">
               <input
                 id="image"
