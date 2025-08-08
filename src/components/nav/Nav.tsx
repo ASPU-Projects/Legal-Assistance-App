@@ -212,11 +212,19 @@ export default function NavBarComponent() {
           },
         }
       );
+
       dispatch(logoutUser());
+      localStorage.removeItem("access_token");
+      localStorage.removeItem("authenticate");
+      localStorage.removeItem("role");
       navigate("/login");
     } catch (error) {
       if (axios.isAxiosError(error) && error?.response?.status === 401) {
         dispatch(logoutUser());
+        localStorage.removeItem("access_token");
+        localStorage.removeItem("authenticate");
+        localStorage.removeItem("role");
+        navigate("/login");
         navigate("/login");
       }
     } finally {
@@ -251,6 +259,10 @@ export default function NavBarComponent() {
       console.error(error);
       if (axios.isAxiosError(error) && error.response?.status === 401) {
         dispatch(logoutUser());
+        localStorage.removeItem("access_token");
+        localStorage.removeItem("authenticate");
+        localStorage.removeItem("role");
+        navigate("/login");
         navigate("/login");
       }
     } finally {
@@ -294,7 +306,11 @@ export default function NavBarComponent() {
           },
         }
       );
+
       dispatch(logoutUser());
+      localStorage.removeItem("access_token");
+      localStorage.removeItem("authenticate");
+      localStorage.removeItem("role");
       navigate("/logup");
     } catch (error) {
       console.log("Error deleting account:", error);

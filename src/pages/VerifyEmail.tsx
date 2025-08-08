@@ -107,7 +107,7 @@ export default function VerifyEmailPage() {
         <motion.h1 className="formTitle">{t("VerifyCode")}</motion.h1>
         <Grid container justifyContent="center" spacing={2}>
           {otp.map((_, index) => (
-            <Grid item key={index}>
+            <Grid component={'div'}>
               <TextField
                 inputRef={(el) => (inputsRef.current[index] = el)}
                 inputProps={{
